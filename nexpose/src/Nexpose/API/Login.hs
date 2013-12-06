@@ -12,7 +12,18 @@
 --  defined for the user, then the login fails, unless the user is a super-user.
 -- 
 -- Session Management
-module Nexpose.API.Login where
+module Nexpose.API.Login 
+  ( 
+  -- * Main Datatypes
+    LoginRequest(..)
+  , LoginResponse(..)
+  -- * Picklers
+  , xpLoginRequest
+  , xpLoginResponse
+  -- * Test Functions
+  , loginReqDoc
+  , loginResDoc
+  ) where
 
 import Text.XML.Expat.Pickle
 import Text.XML.Expat.Tree
