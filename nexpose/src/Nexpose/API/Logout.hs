@@ -74,3 +74,4 @@ logoutResDoc :: String -> LogoutResponse
 logoutResDoc msg = unpickleXML defaultParseOptions (xpRoot xpLogoutResponse) (pack msg)
 -- logReqDoc :: LogoutRequest -> [String]
 -- logReqDoc = runLA (xshow (arr (pickleDoc xpLogoutRequest)))
+-- OKAY

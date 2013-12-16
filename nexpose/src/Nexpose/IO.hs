@@ -1,7 +1,7 @@
 -- License:     MIT
 -- Maintainer:  Montez Fitzpatrick
 -- Stability:   experimental
-module Nexpose.Transport where
+module Nexpose.IO where
 
 import Network.Curl
 

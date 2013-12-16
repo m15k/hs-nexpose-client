@@ -102,3 +102,4 @@ loginResDoc msg = unpickleXML defaultParseOptions (xpRoot xpLoginResponse) (pack
 
 -- logReqTest = LoginRequest Nothing "nxadmin" "passwordy" Nothing
 -- logReqDoc = pickleXML (xpRoot $ xpLoginRequest) logReqTest
+-- OKAY
