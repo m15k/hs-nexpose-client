@@ -1,7 +1,12 @@
 dist
-cabal-dev
 *.o
 *.hi
 *.chi
 *.chs.h
 .virthualenv
+/.refdoc
+/.cabal-sandbox
+/cabal.sandbox.config
+*.swp
+/nexpose/worktable
+
