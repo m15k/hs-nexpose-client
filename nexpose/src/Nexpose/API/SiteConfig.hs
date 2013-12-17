@@ -21,7 +21,7 @@ import Text.XML.Expat.Tree
 import Data.ByteString.Lazy.Char8 (pack, unpack)
 
 import Nexpose.URI
---import Nexpose.API.Site
+import Nexpose.API.Site
 
 data SiteConfigRequest = SiteConfigRequest
   { siteConfigReq_syncId :: Maybe String
@@ -34,7 +34,7 @@ instance ApiVersion SiteConfigRequest where
 
 data SiteConfigResponse = SiteConfigResponse
   { siteConfigRes_success :: !String
---  , siteConfigRes_site :: Site
+ , siteConfigRes_site :: Site
   } deriving (Eq, Show)
 
 xpSiteConfigRequest :: PU [UNode String] SiteConfigRequest
@@ -47,17 +47,17 @@ xpSiteConfigRequest =
            (xpAttr "session-id" xpText0)
            (xpAttr "site-id" xpText0))
 
---xpSiteConfigResponse :: PU [UNode String] SiteConfigResponse
---xpSiteConfigResponse =
---  xpWrap ( uncurry SiteConfigResponse,
---          \(SiteConfigResponse s site) -> ((s),site)) $
---  xpElem "SiteConfigResponse"
---    (xpAttr "success" xpText0)
---    (xpSite)
+xpSiteConfigResponse :: PU [UNode String] SiteConfigResponse
+xpSiteConfigResponse =
+ xpWrap ( uncurry SiteConfigResponse,
+         \(SiteConfigResponse s site) -> ((s),site)) $
+ xpElem "SiteConfigResponse"
+   (xpAttr "success" xpText0)
+   (xpSite)
 --
 -- REPL Test Functions
 siteConfigReqDoc :: SiteConfigRequest -> String
 siteConfigReqDoc scr = unpack $ pickleXML (xpRoot $ xpSiteConfigRequest) scr
 
---siteConfigResDoc :: String -> SiteConfigResponse
---siteConfigResDoc msg = unpickleXML defaultParseOptions (xpRoot xpSiteConfigResponse) (pack msg)
+siteConfigResDoc :: String -> SiteConfigResponse
+siteConfigResDoc msg = unpickleXML defaultParseOptions (xpRoot xpSiteConfigResponse) (pack msg)

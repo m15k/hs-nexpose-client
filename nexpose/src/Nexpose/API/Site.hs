@@ -35,7 +35,7 @@ data Site = Site
   , site_exHosts :: Maybe ExcludedHosts
   , site_credentials :: !Credentials
   , site_alerting :: !Alerting
-  , site_users :: !Users
+  , site_users :: Maybe Users
   , site_scanConfig :: !ScanConfig
   } deriving (Eq, Show)
 
@@ -197,7 +197,7 @@ xpSite =
           (xpOption xpExcludedHosts)
           (xpCredentials)
           (xpAlerting)
-          (xpUsers)
+          (xpOption xpUsers)
           (xpScanConfig))
     
 xpHosts :: PU [UNode String] Hosts
