@@ -1,5 +1,7 @@
 For more information on Rapid7 and nexpose, check out their corporate website at [Rapid7](http://www.rapid7.com/ "Rapid7 Home").  
 
+This is no where close to anything that resembles stability.  
+
 # Nexpose-Client #
 
 ----------
@@ -7,11 +9,37 @@ This package provides Haskell bindings for the Rapid7 Nexpose Vulnerability Mana
 
 As with the [Ruby-bindings](https://github.com/rapid7/nexpose-client), please check with Rapid7 [forums](https://community.rapid7.com/community/nexpose "Rapid7 Forums") for Nexpose.
 
+# Roadmap #
+
+----------
+## 0.0.1 ##
+
+- Thin binding to API 1.1
+
+## 0.0.2 ##
+
+- Thin binding to API 1.2
+
+## 0.0.3 ##
+
+- Refactor APIs 1.1 and 1.2 to ByteString and Text libraries
+- Inital Thick binding
+
+## 0.0.4 ##
+
+- Freeze on thin bindings
+- Finalize Thick binding
+
 # Installation #
 
 ----------
-## Dependencies: Haskell  ##
 ## Dependencies: External  ##
+
+- libcurl
+- expat
+
+## Dependencies: Haskell  ##
+
 
 
 # Usage #
@@ -25,11 +53,6 @@ TODO
 TODO
 
 # Issues #
-
-----------
-TODO
-
-# Author #
 
 ----------
 TODO
